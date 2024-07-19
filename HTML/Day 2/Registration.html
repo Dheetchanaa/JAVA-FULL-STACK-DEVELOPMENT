@@ -6,53 +6,73 @@
     <title>Document</title>
 </head>
 <body>
-    <h1><u>Registration Page</u></h1>
-    <label>Name: 
-        <input type = "text">
-    </label>
-    <br><br>
-    <label>DOB: 
-        <input type = "date">
-    </label>
-    <br><br>
-    <label for="gender">Gender: 
-        <input type = "radio" name ="gender">Male
-        <input type = "radio" name = "gender">Female
-    </label>
-    <br><br>
-    <label>College: 
-        <input type = "text">
-    </label>
-    <br><br>
-    <label for="Department">Department:
-        <select name="Department" id="">
-            <option value="CSE">CSE</option>
-            <option value="IT">IT</option>
-            <option value="CSBS">CSBS</option>
-            <option value="AIDS">AIDS</option>
-        </select>
-    </label>
-    <br><br>
-    <label>Username: 
-        <input type = "text" required>
-    </label>
-    <br><br>
-    <label>Email: 
-        <input type = "email" placeholder="example@gmail.com">
-    </label>
-    <br><br>
-    <label>Password: 
-        <input type = "password" required>
-    </label>
-    <br><br>
-    <label>
-        Upload your resume: <input type = "file" value = "Upload your resume" >
-    </label>
-    <br><br>
-    <label>
-        <input type = "submit" value = "Register">
-    </label>
-    <br><br>
-    Already register? <a href = "Login.html">Login</a>
+    <table width = "40%" align = "center">
+        <tr>
+            <th colspan = 2><h2>Registration Page</h2></th>
+        </tr>
+        <tr>
+
+            <td>First Name</td>
+            <td><input type = "text"><br><br></td>
+        </tr>
+        <tr>
+            <td><label>Last name:</td>
+            <td><input type = "text"><br><br></td>
+            
+        </tr>
+        <tr>
+            <td><label>E-mail:</td>
+            <td><input type = "email"><br><br></td>
+        </tr>
+        <tr>
+            <td><label>Mobile no:</td>
+            <td><input type = "number"><br><br></td>
+        </tr>
+        <tr>
+            <td><label>DOB:</td>
+            <td><input type = "date"><br><br></td>
+        </tr>
+        <tr>
+            <td><label>User Name:</td>
+            <td><input type = "text"><br><br></td>
+        </tr>
+        <tr>
+            <td><label>Password</td>
+            <td><input type = "password"><br><br></td>
+        </tr>
+        <tr>
+            <td><label for="gender">Gender:</td>
+            <td><input type = "radio" name ="gender">Male
+            <input type = "radio" name = "gender">Female<br><br></td>
+            </label>
+        </tr>
+        <tr>
+            <td>Skills:</td>
+            <td><input type = "checkbox" name ="C">C
+            <input type = "checkbox" name ="C++">C++
+            <input type = "checkbox" name ="Java">JAVA<br><br></td>
+        </tr>
+        <tr>
+            <td><label for="City">City:</td>
+                <td><select name="City" id="">
+                    <option value="Coimbatore">Coimbatore</option>
+                    <option value="Erode">Erode</option>
+                    <option value="Salem">Salem</option>
+                    <option value="Namakkal">Namakkal</option>
+                </select><br><br></td>
+            </label>
+        </tr>
+        <tr>
+            <td>Address:</td>
+            <td>
+                <textarea></textarea><br><br>
+            </td>
+        </tr>
+        <tr>
+            <td colspan = 2 align = center>
+                <input type = submit value = Register>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
