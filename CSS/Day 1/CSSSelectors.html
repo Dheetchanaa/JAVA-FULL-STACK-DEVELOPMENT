@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*Universal Selector*/
+        * {
+            background-color: gainsboro;
+            color: rgb(79, 81, 182);
+        }
+        /*Tag Selector*/
+        table{
+            border: 2px solid green;
+            width : 30%;
+        }
+        #heading1{
+            background-color: rgb(154, 155, 229);
+            border: 2px solid rgb(29, 31, 152);
+            width: 30%;
+            text-align: center;
+        }
+        .heading2{
+            background-color: rgb(214, 238, 94);
+            color: rgb(59, 119, 174);
+            border: 2px solid rgb(122, 144, 13);
+            width: 30%;
+            text-align: center;
+        }
+        #tablecenter{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1  id = "heading1">My Heading</h1>
+    <h1  class="heading2">Table</h1>
+    <table >
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Salary</th>
+            
+        </tr>
+        <tr id="tablecenter">
+            <td>Dheetchanaa</td>
+            <td>HR</td>
+            <td>100000</td>
+        </tr>
+        <tr id="tablecenter">
+            <td>GowthamaPriya</td>
+            <td>CEO</td>
+            <td>200000</td>       
+        </tr>
+        <tr id="tablecenter">
+            <td>Pavadharani</td>
+            <td>Product Manager</td>
+            <td>75000</td>
+        </tr>
+        <tr id="tablecenter">
+            <td>Suvetha</td>
+            <td>Developer</td>
+            <td>75000</td>
+        </tr>
+    </table>
+</body>
+</html>
