@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function strLen(){
+            var str = document.getElementById("texts").value;
+            document.getElementById("lenRes").innerHTML=str.length;
+        }
+        function charat(){
+            var texts = document.getElementById("texts").value;
+            var indexes = parseInt(document.getElementById("num").value);
+            document.getElementById("charAtRes").innerHTML=texts.charAt(indexes);;
+        }
+        function slice(){
+            var texts=document.getElementById("texts").value;
+            var start=parseInt(document.getElementById("start").value);
+            var end=parseInt(document.getElementById("end").value);
+            document.getElementById("sliceRes").innerHTML=texts.slice(start,end);
+        }
+        function substring(){
+            var texts=document.getElementById("texts").value;
+            var start=parseInt(document.getElementById("startsub").value);
+            var end=parseInt(document.getElementById("endsub").value);
+            document.getElementById("substringRes").innerHTML=texts.substring(start,end);
+        }
+        function substr(){
+            var texts=document.getElementById("texts").value;
+            var start=parseInt(document.getElementById("startsubstr").value);
+            var end=parseInt(document.getElementById("endsubstr").value);
+            document.getElementById("substrRes").innerHTML=texts.substr(start,end);
+        }
+        function upper(){
+            var texts=document.getElementById("texts").value;
+            document.getElementById("upperCase").innerHTML=texts.toUpperCase();
+        }
+        function lower(){
+            var texts=document.getElementById("texts").value;
+            document.getElementById("lowerCase").innerHTML=texts.toLowerCase();
+        }
+        function concate(){
+            var texts=document.getElementById("texts").value;
+            var texts2=document.getElementById("texts2").value;
+            document.getElementById("concating").innerHTML=texts.concat(texts2);
+        }
+        function trim(){
+            var texts=document.getElementById("texts").value;
+            var res = texts.trim();
+            document.getElementById("trim").innerHTML=res;
+        }
+        function trimStarting(){
+            var texts=document.getElementById("texts").value;
+            var res = texts.trimStart();
+            document.getElementById("trimStart").innerHTML=res;
+        }
+        function trimEnding(){
+            var texts=document.getElementById("texts").value;
+            var res = texts.trimEnd();
+            document.getElementById("trimEnd").innerHTML=res;
+        }
+        function repeat(){
+            var texts = document.getElementById("texts").value;
+            var count = parseInt(document.getElementById("num1").value);
+            document.getElementById("repeat").innerHTML=texts.repeat(count);
+        }
+        function replace(){
+            var texts = document.getElementById("texts").value;
+            var texts2 = document.getElementById("texts3").value;
+            var texts3 = document.getElementById("texts4").value;
+            document.getElementById("replace").innerHTML=texts.replace(texts2,texts3);
+        }
+        function replaceAll(){
+            var texts = document.getElementById("texts").value;
+            var texts2 = document.getElementById("texts5").value;
+            var texts3 = document.getElementById("texts6").value;
+            document.getElementById("replaceAll").innerHTML=texts.replaceAll(texts2,texts3);
+        }
+        function split(){
+            var texts = document.getElementById("texts").value;
+            document.getElementById("split").innerHTML=texts.split(" ");
+        }
+    </script>
+</head>
+<body>
+    <b><p>Find length of a string</p></b>
+    Enter a sentence: <input type="text" id="texts"><br><br>
+    <button onclick="strLen()">Find length</button><br><br>
+    <div id="lenRes"></div><br>
+
+    <b><p>Find letter in specific index</p></b>
+    Enter a num: <input type="text" id="num"><br><br>
+    <button onclick="charat()">Find letter in this index</button><br><br>
+    <div id="charAtRes"></div><br>
+
+    <b><p>Slice operation in string</p></b>
+    Enter starting number: <input type="text" id="start">
+    Enter ending number: <input type="text" id="end"><br><br>
+    <button onclick="slice()">Find text between these</button><br><br>
+    <div id="sliceRes"></div><br>
+
+    <b><p>Find Sub-string of a string</p></b>
+    Enter starting number: <input type="text" id="startsub">
+    Enter ending number: <input type="text" id="endsub"><br><br>
+    <button onclick="substring()">Find text between these</button><br><br>
+    <div id="substringRes"></div><br>
+
+    <b><p>Find Sub-str of a string</p></b>
+    Enter starting number: <input type="text" id="startsubstr">
+    Enter ending number: <input type="text" id="endsubstr"><br><br>
+    <button onclick="substr()">Find text between these</button><br><br>
+    <div id="substrRes"></div><br>
+
+    <b><p>Upper case of a string</p></b>
+    <button onclick="upper()">Convert to Upper</button><br><br>
+    <div id="upperCase"></div><br>
+
+    <b><p>Lower case of a string</p></b>
+    <button onclick="lower()">Convert to lower</button><br><br>
+    <div id="lowerCase"></div><br>
+
+    <b><p>Concatenation in strings</p></b>
+    Enter a text: <input type="text" id="texts2"><br><br>
+    <button onclick="concate()">Concat two strings</button><br><br>
+    <div id="concating"></div><br>
+
+    <b><p>Trim in string</p></b>
+    <button onclick="trim()">Trim</button><br><br>
+    <div id="trim"></div><br>
+
+    <b><p>Trim start in string</p></b>
+    <button onclick="trimStarting()">Trim Start</button><br><br>
+    <div id="trimStart"></div><br>
+
+    <b><p>Trim end in string</p></b>
+    <button onclick="trimEnding()">Trim End</button><br><br>
+    <div id="trimEnd"></div><br>
+    
+    <b><p>Repeat string</p></b>
+    Enter a num: <input type="text" id="num1"><br><br>
+    <button onclick="repeat()">Repeat string</button><br><br>
+    <div id="repeat"></div><br>
+
+    <b><p>Replace string</p></b>
+    Enter string1: <input type="text" id="texts3"><br><br>
+    Enter string2: <input type="text" id="texts4"><br><br>
+    <button onclick="replace()">Replace string</button><br><br>
+    <div id="replace"></div><br>
+
+    <b><p>ReplaceAll string</p></b>
+    Enter string1: <input type="text" id="texts5"><br><br>
+    Enter string2: <input type="text" id="texts6"><br><br>
+    <button onclick="replaceAll()">ReplaceAll string</button><br><br>
+    <div id="replaceAll"></div><br>
+
+    <b><p>Split in string</p></b>
+    <button onclick="split()">Split string</button><br><br>
+    <div id="split"></div><br>
+</body>
+</html>

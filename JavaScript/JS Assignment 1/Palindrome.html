@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function palindrome(){
+            var texts=document.getElementById("texts").value;
+            var n = texts.length;
+            var rev="";
+            var res="";
+            for(let i=n-1;i>=0;i--){
+                rev+=texts.charAt(i);
+            }
+            if(texts==rev){
+                res="Palindrome"
+            }
+            else{
+                res="Not a palindrome";
+            }
+            document.getElementById("Result").innerHTML=res;
+        }
+    </script>
+</head>
+<body>
+    Enter a string:<input type="text" id="texts"><br><br>
+    <button onclick="palindrome()">Find palindrome</button><br><br>
+    <div id="Result"></div>
+</body>
+</html>
