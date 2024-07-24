@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //if func is single line we dont need to use curly braces or return keyword.
+        const sum = () => {return 10+20}; //without argument
+        document.write("Addition: "+sum());
+
+        const sub = (x,y) => x-y; //with argument
+        document.write("<br>Subtraction: "+sub(10,20));
+
+        const mul = (x,y) => x*y;
+        document.write("<br>Multiplication: "+mul(10,20));
+        const big = (x,y) =>{
+            if(x>y){
+                return x;
+            }
+            else{
+                return y;
+            }
+        }
+        document.write("<br>Big: "+big(10,20));
+    </script>
+</head>
+<body>
+    <div id="result"></div>
+</body>
+</html>

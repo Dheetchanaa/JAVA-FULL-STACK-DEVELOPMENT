@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function myFunc(){
+            const skills = new Array("C","C++","Java");
+            document.write("Array Elements : "+skills);
+            document.write("<br>Array size : "+skills.length);
+            document.write("<br>First Element : "+skills[0]);
+            document.write("<br>Last Element : "+skills[skills.length-1]);
+            skills.push("Python");
+            document.write("<br>Array Elements : "+skills);
+            skills.pop();
+            document.write("<br>Array Elements :");
+            for(let i=0;i<skills.length;i++){
+                document.write("<br>"+skills[i]);
+            }
+        }
+    </script>
+</head>
+<body onload="myFunc()">
+    
+</body>
+</html>
