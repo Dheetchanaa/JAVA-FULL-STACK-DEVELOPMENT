@@ -5,8 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+        }
+        form{
+            border: 2px solid rgb(134, 202, 220);
+            width: 25%;
+            height: 50%;  
+            border-radius: 5px; 
+        }
+        #pwd{
+            font-size: 10px;
+            padding-top: 5%;
+        }
+        .signBox{
+            display: flex;
+            justify-content: space-between;
+            background-color: rgb(176, 229, 244);
+            height: 15%;
+            padding: 10px;
+            color: rgb(25, 101, 146);
+            font-size: 18px;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+        }
+        #input1{
+            padding: 20px;
+        }
+        .end{
+            border-top: 1px solid grey;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="container">
+        <form>
+            <div class="signBox">
+                <p>Sign In</p>
+                <a href="#" id="pwd"> Forgot password?</a>
+            </div>
+            <br>
+            <div id="input1">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="bi bi-person-fill"></i></span>
+                    <input  type="email" class="form-control"placeholder="username or email">
+                </div><br>
+                <div class="input-group">
+                      <span class="input-group-addon"><i class="bi bi-lock-fill"></i></span>
+                      <input type="password" class="form-control" placeholder="password">
+                </div><br>
+                <div>
+                    <input type="checkbox">  Remember me
+                </div><br>
+                <div>
+                    <button class="btn btn-success">Login</button>
+                    <button class="btn btn-primary">Login with Facebook</button>
+                </div>
+                <br>
+                <div class="end">
+                    <br>
+                    <span>Don't have an account! <a href="#">Sign Up Here</a></span>
+                </div>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
