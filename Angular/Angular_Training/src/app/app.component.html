@@ -1,0 +1,52 @@
+<!--<h1>Interpolation</h1>
+<b>
+  my Name : {{ name}}
+  <br>
+  my Age : {{ age}}
+  <br>
+  Email:<input type="text" value="{{email}}"/>
+  <br>
+  Addition:{{getAddition(10,20)}}
+</b>
+<h1>Property Binding</h1>
+<font [color] ="txtColor">
+<b>
+  my Name : <input type="text"[value]="name"/>
+  <br>
+  my Age : <input type="text"[value]="age"/>
+  <br>
+  Email:<input type="text" [value]="email"/>
+  <br>
+  Addition: <input type="text" [value]="getAddition(20,30)"/>
+</b>
+</font>
+<img [src]="imgPath"  width="200" height="150"/>
+<h1>Event Binding</h1>
+<br>
+<button (click)="changeName()">Change Name</button><br><br>
+<button (click)="changeEmail()">Change Email</button><br><br>
+<button (click)="changeAge()">Change Age</button><br><br>
+<button (click)="changeImg()">Change Image</button><br><br>
+<h1>Two way Data Binding Example</h1>
+Enter Your First Name<input type="text " [(ngmodule)]="fname" />
+<br>
+<b>Welcome {{fname}}</b>-->
+<h1>Angular Structural Directives</h1>
+<button (click)="changeFlag()">Show or Hide Div</button>
+<br>
+<div *ngIf="flag" [ngStyle]="myStyle">
+ <!-- My Div--><ul>
+  <li *ngFor="let vec of vehicle" (click)="setSelectedItem(vec)">{{ vec }}</li>
+ </ul>
+ <br>
+ <b [ngClass]="myClass">You Have Selected : {{selectedVehicle}}</b>
+ <br>
+ <div [ngSwitch]="selectedVehicle">
+  <font color="green" *ngSwitchCase=" 'TwoWheeler' ">Bike</font>
+  <font color="green" *ngSwitchCase=" 'ThreeWheeler' ">Auto</font>
+  <font color="green" *ngSwitchCase=" 'FourWheeler' ">Car</font>
+  <font color="green" *ngSwitchDefault>Invalid</font>
+ </div>
+ <br>
+ <button (click)="changeClass()">change Class</button>
+</div>
