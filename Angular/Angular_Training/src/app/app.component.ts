@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CalculatorServiceService } from './calculator-service.service';
 
 @Component({
   selector: 'app-root',
@@ -39,7 +40,7 @@ export class AppComponent {
   changeImg(){
       this.imgPath="https://www.searchenginejournal.com/wp-content/uploads/2019/04/the-seo-guide-to-angular.png";
   }
-  title = 'MyAngularProject1';*/
+  title = 'MyAngularProject1';
 
   flag:boolean;
   vehicle:string[];
@@ -63,5 +64,10 @@ export class AppComponent {
   }
   changeClass(){
     this.myClass = "MyClass2";
-  }
+  }*/
+
+    sum : number;
+    constructor(private calc : CalculatorServiceService){
+      this.sum = calc.getAddition(10,30);
+    }
 }

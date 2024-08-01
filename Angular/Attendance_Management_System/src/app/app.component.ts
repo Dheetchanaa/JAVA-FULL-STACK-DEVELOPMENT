@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Attendance } from './model/attendance';
 
 @Component({
   selector: 'app-root',
@@ -7,28 +8,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Attendance_Management_System';
-  regNo:string;
-  name : string;
-  attendance : string;
-  date : string;
-  regNo1:string;
-  name1 : string;
-  attendance1 : string;
-  date1 : string;
+  student : Attendance;
   constructor(){
-    this.regNo = "document.getElementById(name)";
-    this.name = "document.getElementById(name)";
-    this.attendance = "document.getElementById(name)";
-    this.date = "document.getElementById(date)";
-    this.regNo1 = "";
-    this.name1 = "";
-    this.attendance1 = "";
-    this.date1 = "";
+    this.student = new Attendance;
   }
-  printDetails(){  
-    this.regNo1 = this.regNo;
-    this.name1 = "";
-    this.attendance1 = "";
-    this.date1 = "";
+  insertStudent(data: any){
+    this.student.regNo= data.regNo;
+    this.student.studName= data.studName;
+    this.student.date = data.date;
+    this.student.attendance = data.attendance;
+    alert(data.regNo+" "+data.studName+" "+data.date+" "+data.attendance);
   }
 }

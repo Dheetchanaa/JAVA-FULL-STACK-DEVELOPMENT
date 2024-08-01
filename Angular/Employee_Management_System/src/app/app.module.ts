@@ -4,7 +4,7 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { AttendanceService } from './attendance.service';
+import { EmployeeService } from './employee.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import { AttendanceService } from './attendance.service';
     FormsModule
   ],
   providers: [
-    AttendanceService
+    EmployeeService
   ],
   bootstrap: [AppComponent]
 })

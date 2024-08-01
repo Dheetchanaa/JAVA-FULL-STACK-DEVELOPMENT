@@ -12,26 +12,90 @@
         <div class="section2">
             <h2>Mark Attendance</h2>
             <br>
-            <form>
-                <div>
-                    Register number: <input type="text">
+            <form #myForm="ngForm">
+                <div class="form-group">
+                    <label for="regNo">Register number: </label>
+                    <input type="text"
+                    id="input1"
+                    class="form-control" 
+                    name="regNo" 
+                    #regNo="ngModel" ngModel
+                    required
+                    pattern="[0-9]+">
                 </div>
-                <div>
-                    Student name: <input type="text">
+                <div *ngIf="regNo.touched">
+                    <div *ngIf="regNo.errors?.['required']">
+                      <b style="color:red">Register Number Required.</b>
+                    </div>
+                    <div *ngIf="regNo.errors?.['pattern']">
+                      <b style="color:red">Invalid Register Number.</b>
+                    </div>
                 </div>
-                <div>
-                    Date: <input type="date">
+
+                <div class="form-group">
+                    <label for="studName">Student name: &nbsp;&nbsp;&nbsp;</label>
+                    <input type="text"
+                    id="input1"
+                    class="form-control" 
+                    name="studName" 
+                    #studName="ngModel" ngModel
+                    required
+                    pattern="[a-zA-Z]+">
                 </div>
+                <div *ngIf="studName.touched">
+                    <div *ngIf="studName.errors?.['required']">
+                      <b style="color:red">Student Name Required.</b>
+                    </div>
+                    <div *ngIf="studName.errors?.['pattern']">
+                      <b style="color:red">Invalid Student Name.</b>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Date: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <input type="date"
+                    id="input1"
+                    class="form-control" 
+                    name="date" 
+                    #date="ngModel" ngModel
+                    required>
+                </div>
+                <div *ngIf="date.touched">
+                    <div *ngIf="date.errors?.['required']">
+                      <b style="color:red">Date Required.</b>
+                    </div>
+                </div>
+
                 <div>
-                    Attendance: <select value="attendance">
-                        <option>Present</option>
-                        <option>Abscent</option>
-                        <option>Late</option>
+                    <label for="attendance">Attendance: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <select name="attendance" [(ngModel)]="student.attendance" id="atten1">
+                        <option value="Present">Present</option>
+                        <option value="Absent">Absent</option>
+                        <option value="Late">Late</option>
                     </select>
-                </div> 
-                <div>
-                    <input type="submit" id="submitInput">
-                </div> 
+                </div>
+                <div class="submission">
+                    <div class="submission1">
+                        <div>
+                            <input type="submit" value = "Insert" id="submitInput" (click) = insertStudent(myForm.value)>
+                        </div> 
+                        <div>
+                            <input type="submit" value = "Update" id="submitInput">
+                        </div> 
+                        <div>
+                            <input type="submit" value = "Delete" id="submitInput">
+                        </div> 
+                    </div>
+                    <br>
+                    <div class="submission2">
+                        <div>
+                            <input type="submit" value = "Find" id="submitInput">
+                        </div> 
+                        <div>
+                            <input type="submit" value = "Find All" id="submitInput">
+                        </div> 
+                    </div>
+                </div>  
             </form>
         </div>
     </div>
@@ -63,7 +127,7 @@
                         <td>103</td>
                         <td>Gopika S</td>
                         <td>30/07/2024</td>
-                        <td>Abscent</td>
+                        <td>Absent</td>
                     </tr>
                     <tr>
                         <td>104</td>
