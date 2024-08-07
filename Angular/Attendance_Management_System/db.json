@@ -1,14 +1,22 @@
-[
+{
+  "students": [
     {
-        "regNo":101,
-        "studName" : "Dhee",
-        "date":"08/06/2024",
-        "attendance":"Present"
+      "id": "101",
+      "studName": "Dhee",
+      "date": "08/06/2024",
+      "attendance": "Present"
     },
     {
-        "regNo":102,
-        "studName" : "Priya",
-        "date":"08/06/2024",
-        "attendance":"Absent"
+      "id": "102",
+      "studName": "Priya",
+      "date": "08/06/2024",
+      "attendance": "Absent"
+    },
+    {
+      "id": "103",
+      "studName": "Hema",
+      "date": "2024-08-01",
+      "attendance": "Late"
     }
-]
+  ]
+}

@@ -38,8 +38,19 @@
                                            class="form-control" 
                                            name="empName" 
                                            #empName="ngModel" ngModel
+                                           required
+                                           pattern="[a-zA-Z]+"
                                             />
                                 </div>
+                                <div *ngIf="empName.touched">
+                                    <div *ngIf="empName.errors?.['required']">
+                                      <b style="color:red">Employee Name Required.</b>
+                                    </div>
+                                    <div *ngIf="empName.errors?.['pattern']">
+                                      <b style="color:red">Invalid Employee Name.</b>
+                                    </div>
+                                  </div>
+
                                 <div class="form-group">
                                     <label for="Employee Salary">
                                         Employee Salary
@@ -48,30 +59,50 @@
                                            class="form-control" 
                                            name="empSalary" 
                                            #empSalary="ngModel" ngModel
+                                           required
+                                           pattern="[0-9]+"
                                            />
                                 </div>
-                                                              
+                                <div *ngIf="empSalary.touched">
+                                    <div *ngIf="empSalary.errors?.['required']">
+                                      <b style="color:red">Employee Salary Required.</b>
+                                    </div>
+                                    <div *ngIf="empSalary.errors?.['pattern']">
+                                      <b style="color:red">Invalid Employee Salary.</b>
+                                    </div>
+                                  </div>          
+                                
+
                                 <button class="btn btn-success" (click) = "insertEmployee(myForm.value)">
                                     Insert 
                                 </button>
                             &nbsp;&nbsp;
-                                <button class="btn btn-primary"  >
+                                <button class="btn btn-primary" (click) = "updateEmployee(myForm.value)" >
                                     Update 
                                 </button>&nbsp;&nbsp;
-                                <button class="btn btn-danger" >
+                                <button class="btn btn-danger" (click) = "deleteEmployee(myForm.value)">
                                     Delete 
                                 </button>&nbsp;&nbsp;
-                                <button class="btn btn-warning" >
+                                <button class="btn btn-warning" (click) = "findEmployee(myForm.value)">
                                     Find 
                                 </button>
                                 &nbsp;&nbsp;
-                                <button class="btn btn-info" >
+                                <button class="btn btn-info" (click) = "findAllEmployee()">
                                     Find All
                                 </button>
                             </form>
                         </div>
                     </div>
                 </div>
-         
+         <br>
+         <h3> {{ result }} </h3>
+         <div style="width: 100%;" *ngIf="flag">
+          <table width="80%" align="center" class="table table-borderd">
+           <tr><th>Employee Id</th><th>Employee Name</th><th>Employee Salary</th></tr> 
+            <tr *ngFor="let emp of employeeArr">
+                <td> {{emp.id}} </td><td> {{emp.empName}} </td><td> {{emp.empSalary}} </td>
+            </tr>
+         </table>
+         </div>
     </body>
 </html>

@@ -80,60 +80,40 @@
                             <input type="submit" value = "Insert" id="submitInput" (click) = insertStudent(myForm.value)>
                         </div> 
                         <div>
-                            <input type="submit" value = "Update" id="submitInput">
+                            <input type="submit" value = "Update" id="submitInput" (click) = updateStudent(myForm.value)>
                         </div> 
                         <div>
-                            <input type="submit" value = "Delete" id="submitInput">
+                            <input type="submit" value = "Delete" id="submitInput" (click) = deleteStudent(myForm.value)>
                         </div> 
                     </div>
                     <br>
                     <div class="submission2">
                         <div>
-                            <input type="submit" value = "Find" id="submitInput">
+                            <input type="submit" value = "Find" id="submitInput" (click) = findStudent(myForm.value)>
                         </div> 
                         <div>
-                            <input type="submit" value = "Find All" id="submitInput">
+                            <input type="submit" value = "Find All" id="submitInput" (click) = findAllStudent()>
                         </div> 
                     </div>
                 </div>  
             </form>
         </div>
     </div>
+    <h2 style="text-align: center;"> {{ result }} </h2>
     <div>
-        <div class="section3">
+        <div class="section3" *ngIf="flag">
             <h2>View Atttendance</h2>
             <br>
-            <div>
+            <div *ngIf="flag">
                 <table cellpadding="0" cellspacing="0">
-                    <tr>
-                        <th>REGISTER NUMBER</th>
-                        <th>STUDENT NAME</th>
-                        <th>DATE</th>
-                        <th>ATTENDANCE STATUS</th>
-                    </tr>
-                    <tr>
-                        <td>101</td>
-                        <td>Anumitha B</td>
-                        <td>30/07/2024</td>
-                        <td>Present</td>
-                    </tr>
-                    <tr>
-                        <td>102</td>
-                        <td>Dheetchanaa K</td>
-                        <td>30/07/2024</td>
-                        <td>Present</td>
-                    </tr>
-                    <tr>
-                        <td>103</td>
-                        <td>Gopika S</td>
-                        <td>30/07/2024</td>
-                        <td>Absent</td>
-                    </tr>
-                    <tr>
-                        <td>104</td>
-                        <td>Gowthamapriya S</td>
-                        <td>30/07/2024</td>
-                        <td>Abscent</td>
+                <tr>
+                    <th>Register</th>
+                    <th>Student name</th>
+                    <th>Date</th>
+                    <th>Attendance status</th>
+                </tr>
+                    <tr *ngFor="let stu of studentArr">
+                        <td> {{stu.id}} </td><td> {{stu.studName}} </td><td> {{stu.date}} </td><td>{{stu.attendance}}</td>
                     </tr>
                 </table>
             </div>
