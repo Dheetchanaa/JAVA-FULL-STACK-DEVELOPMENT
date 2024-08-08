@@ -1,0 +1,42 @@
+create table tbl_employee (eid number(5), ename varchar2(20), esalary number(5));
+insert into tbl_employee values(101, 'Dhee' , 2000);
+insert into tbl_employee values(102, 'Sanjai', 3000);
+insert into tbl_employee values(103, 'Gowthamapriya', 4000);
+insert into tbl_employee values(104, 'Pavadharani', 5000);
+insert into tbl_employee values(105, 'Suvetha', 6000);
+insert into tbl_employee (eid, esalary) values(106, 7000);
+alter table tbl_employee add depno number(5);
+update tbl_employee set depno=10 where eid in (101,102);
+update tbl_employee set depno=20 where eid in (103,104);
+update tbl_employee set depno=30 where eid in (105,106);
+select * from tbl_employee;
+
+Group by:
+select depno, count(*) from tbl_employee group by depno;
+select depno, count(*), sum(esalary), avg(esalary), min(esalary), max(esalary) from tbl_employee group by depno;
+select depno, count(*), sum(esalary), avg(esalary), min(esalary), max(esalary) from tbl_employee group by depno order by depno;
+
+Having :
+select depno, count(*), sum(esalary), avg(esalary), min(esalary), max(esalary) from tbl_employee group by depno having min(esalary)>2000 order by depno;
+
+Constrains:
+create table tbl_student(reg_no number(5) primary key, stud_name varchar2(20) not null, stud_age number(3) check (stud_age >0), stud_email varchar2(20) unique, stud_location varchar2(20) default 'Erode');
+Constrain violation:
+insert into tbl_student(reg_no, stud_name, stud_age, stud_email) values(102,'dhee',20,'dhee@gmail.com');
+
+Connecting table via foreign key:
+create table department(dno number(5) primary key, dname varchar2(20));
+create table employee (eid number(5) primary key, ename varchar2(20), esalary number(5), dno number(5), foreign key(dno) references department(dno));
+
+insert into department values(10, 'CSE');
+insert into employee values(101, 'Dhee', 2000, 10);
+insert into employee values(102, 'Priya', 3000, 10);
+
+Views:
+select * from tbl_employee;
+create view employee_view as select * from tbl_employee where depno=10;
+select * from employee_view;
+update employee_view set esalary = 7000 where eid=101;
+
+Alias:
+select eid as "Employee Id", ename Employee_Name from tbl_employee;
