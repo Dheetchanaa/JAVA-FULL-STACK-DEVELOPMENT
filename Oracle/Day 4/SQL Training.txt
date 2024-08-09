@@ -1,0 +1,65 @@
+create table agents(Agent_Code varchar2(4), Agent_Name varchar2(6), Working_Area varchar2(20));
+insert into agents values('A101', 'agent1', 'chennai');
+insert into agents values('A102', 'agent2', 'chennai');
+insert into agents values('A103', 'agent3', 'Bangalore');
+insert into agents values('A104', 'agent4', 'Bangalore');
+create table customers(Customer_Code varchar2(4), Customer_Name varchar2(20), Customer_Area varchar2(20));
+insert into customers values('C101', 'customer1', 'chennai');
+insert into customers values('C102', 'customer2', 'chennai');
+insert into customers values('C103', 'customer3', 'chennai');
+insert into customers values('C104', 'customer4', 'Bangalore');
+insert into customers values('C105', 'customer5', 'Bangalore');
+
+JOINS:
+Inner Join:
+1.Equi Join:
+select a.agent_name, c.customer_name, c.customer_area from agents a join customers c on a.Working_Area = c.Customer_Area;
+
+select agents.agent_name, customers.customer_name, customers.customer_area from agents join customers on agents.Working_Area = customers.Customer_Area;
+
+select a.agent_name, c.customer_name, c.customer_area from agents a, customers c where a.Working_Area = c.Customer_Area;
+
+Inner Join:
+2.Non - Equi Join:
+select agents.agent_name, customers.customer_name, customers.customer_area from agents join customers on agents.Working_Area <> customers.Customer_Area;
+
+insert into agents values('A105', 'agent5', 'New York');
+insert into customers values('C106', 'customer6', 'Delhi');
+
+OUTER JOIN:
+1.Left join:
+select * from agents left join customers on agents.Working_Area = customers.Customer_Area;
+
+select * from agents left outer join customers on agents.Working_Area = customers.Customer_Area;
+
+select * from agents, customers where agents.Working_Area = customers.Customer_Area(+);
+
+2.Right join:
+select * from agents right outer join customers on agents.Working_Area = customers.Customer_Area;
+
+select * from agents right join customers on agents.Working_Area = customers.Customer_Area;
+
+select * from agents, customers where agents.Working_Area(+) = customers.Customer_Area;
+
+3.Full join:
+select * from agents full join customers on agents.Working_Area =customers.Customer_Area;
+
+select * from agents full outer join customers on agents.Working_Area = customers.Customer_Area;
+
+4.Self join:
+
+select a.agent_code, b.agent_name from agents a, agents b  where a.Working_Area = b.Working_Area;
+
+5.Cross join:
+
+select * from agents cross join customers;
+
+SUB QUERIES:
+1.Single row subquery:
+
+select * from customers where customer_area = (select working_area from agents where agent_code = 'A101');
+
+2.Multi row subquery:
+
+select * from customers where customer_area in (select working_area from agents where agent_code = 'A101' or agent_code = 'A104');
+
